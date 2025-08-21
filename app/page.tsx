@@ -10,22 +10,8 @@ import ReviewsSection from './components/ReviewsSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import VideoModal from './components/VideoModal';
 
 export default function Home() {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [currentVideo, setCurrentVideo] = useState('');
-
-  const openVideoModal = (videoUrl: string) => {
-    setCurrentVideo(videoUrl);
-    setIsVideoModalOpen(true);
-  };
-
-  const closeVideoModal = () => {
-    setIsVideoModalOpen(false);
-    setCurrentVideo('');
-  };
-
   const whatsappBooking = () => {
     window.open('https://api.whatsapp.com/send/?phone=17868164231&text&type=phone_number&app_absent=0', '_blank');
   };
@@ -45,13 +31,6 @@ export default function Home() {
           <Phone className="w-6 h-6" />
         </button>
       </div>
-
-      {/* Video Modal */}
-      <VideoModal
-        isOpen={isVideoModalOpen}
-        videoUrl={currentVideo}
-        onClose={closeVideoModal}
-      />
 
       {/* Navigation */}
       <Navigation
