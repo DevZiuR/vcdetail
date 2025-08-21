@@ -6,10 +6,10 @@ interface ServicesSectionProps {
 }
 
 export default function ServicesSection({ onWhatsAppBooking }: ServicesSectionProps) {
-  const { ref: sectionRef, isVisible } = useScrollAnimation();
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
-  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
-  const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
+  const { ref: sectionRef } = useScrollAnimation<HTMLElement>();
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation<HTMLHeadingElement>();
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation<HTMLDivElement>();
+  const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section ref={sectionRef} id="services" className="py-20 bg-white">

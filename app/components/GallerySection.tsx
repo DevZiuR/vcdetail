@@ -7,10 +7,9 @@ import { useScrollAnimation, fadeInUp, scaleIn } from '../hooks/useScrollAnimati
 
 interface GallerySectionProps {
   onWhatsAppBooking: () => void;
-  onOpenVideoModal: (videoUrl: string) => void;
 }
 
-export default function GallerySection({ onWhatsAppBooking, onOpenVideoModal }: GallerySectionProps) {
+export default function GallerySection({ onWhatsAppBooking }: GallerySectionProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentType, setCurrentType] = useState<'image' | 'video'>('image');
@@ -56,10 +55,10 @@ export default function GallerySection({ onWhatsAppBooking, onOpenVideoModal }: 
     setCurrentType(allMedia[newIndex].type);
   };
 
-  const { ref: sectionRef, isVisible } = useScrollAnimation();
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
-  const { ref: galleryRef, isVisible: galleryVisible } = useScrollAnimation();
-  const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation();
+  const { ref: sectionRef } = useScrollAnimation<HTMLElement>();
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation<HTMLHeadingElement>();
+  const { ref: galleryRef, isVisible: galleryVisible } = useScrollAnimation<HTMLDivElement>();
+  const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section ref={sectionRef} id="gallery" className="py-16 bg-[#0A0A0A]">

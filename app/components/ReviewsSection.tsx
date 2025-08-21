@@ -2,10 +2,10 @@ import { Star } from 'lucide-react';
 import { useScrollAnimation, fadeInUp, scaleIn } from '../hooks/useScrollAnimation';
 
 export default function ReviewsSection() {
-  const { ref: sectionRef, isVisible } = useScrollAnimation();
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
-  const { ref: reviewsRef, isVisible: reviewsVisible } = useScrollAnimation();
-  const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation();
+  const { ref: sectionRef } = useScrollAnimation<HTMLElement>();
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation<HTMLDivElement>();
+  const { ref: reviewsRef, isVisible: reviewsVisible } = useScrollAnimation<HTMLDivElement>();
+  const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section ref={sectionRef} id="reviews" className="py-20 bg-white">
