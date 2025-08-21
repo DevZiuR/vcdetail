@@ -74,7 +74,6 @@ export default function Home() {
       {/* Gallery Section */}
       <GallerySection
         onWhatsAppBooking={whatsappBooking}
-        onOpenVideoModal={openVideoModal}
       />
 
       {/* Reviews Section */}
