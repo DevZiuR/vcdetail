@@ -1,11 +1,13 @@
 {
   "extends": ["next/core-web-vitals"],
+  "plugins": ["@next/next"],
   "rules": {
-    "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }]
+    "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
+    "@next/next/no-html-link-for-pages": "error"
   },
   "overrides": [
     {
-      "files": ["app/layout.tsx"],
+      "files": ["app/**/*.tsx"],
       "rules": {
         "react-refresh/only-export-components": "off"
       }

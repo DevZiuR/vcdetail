@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Phone } from 'lucide-react';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
