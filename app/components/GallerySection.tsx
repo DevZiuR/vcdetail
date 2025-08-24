@@ -17,13 +17,13 @@ export default function GallerySection({ onWhatsAppBooking }: GallerySectionProp
   const galleryImages = [
     'https://i.imgur.com/XCLRIr9.jpeg',
     'https://i.imgur.com/MmtjWtL.jpeg',
-    'https://i.imgur.com/xCXn9jK.png',
     'https://i.imgur.com/ScmgzZ4.jpeg',
-    'https://i.imgur.com/yqmIUoX.jpeg',
     'https://i.imgur.com/2KehwFh.jpeg'
   ];
 
   const verticalVideos = [
+    'https://i.imgur.com/ZzFlecg.mp4',
+    'https://i.imgur.com/oSlBAzb.mp4',
     'https://i.imgur.com/xtmHygI.mp4',
     'https://i.imgur.com/ZLpGUEd.mp4'
   ];
@@ -68,7 +68,7 @@ export default function GallerySection({ onWhatsAppBooking }: GallerySectionProp
             className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
             style={fadeInUp(titleVisible, 0)}
           >
-            Our Work Speaks
+            Our <span className='text-[#929AAB]'>Work</span> Speaks for Itself
           </h2>
           <p 
             className="text-xl text-stone-300 max-w-3xl mx-auto font-serif leading-relaxed"

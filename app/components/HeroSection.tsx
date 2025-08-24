@@ -40,11 +40,11 @@ export default function HeroSection({ onWhatsAppBooking, onScrollToSection }: He
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center text-white px-4 max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
-            Elite Mobile Detailing<br />
-            <span className="text-stone-200 font-medium">That Comes To You</span>
+            Elite Mobile <span className='text-[#929AAB]'>Detailing</span> <br />
+            <span className="text-stone-200 font-medium">That <span className='text-[#929AAB]'>Comes</span> To You</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-stone-200 max-w-3xl mx-auto font-serif leading-relaxed">
-            Luxury car care for Miami's most discerning drivers. Paint correction & ceramic coating at our private studio. Full detailing at your location.
+            Luxury car care for Miami's most discerning drivers. Paint correction & ceramic coating at our private studio. <span className='font-bold'>Full detailing</span> at your location.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

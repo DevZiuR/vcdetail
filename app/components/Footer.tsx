@@ -42,10 +42,24 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-4">Follow Us</h4>
             <div className="flex space-x-4">
               <div className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-stone-700 transition-colors cursor-pointer">
-                <span className="text-sm">IG</span>
+                <a
+                  href="https://www.instagram.com/vcdetail_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex items-center justify-center w-full h-full"
+                >
+                  <span className="text-sm">IG</span>
+                </a>
               </div>
               <div className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-stone-700 transition-colors cursor-pointer">
+                <a href="https://www.facebook.com/profile.php?id=61576921455377&mibextid=wwXIfr&rdid=ezuxYD1VYMZwAo2Z&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A4fDyNazK%2F%3Fmibextid%3DwwXIfr"
+                target='_blank'
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                >
                 <span className="text-sm">FB</span>
+                </a>
               </div>
             </div>
           </div>

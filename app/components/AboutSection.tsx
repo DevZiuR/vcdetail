@@ -13,13 +13,13 @@ export default function AboutSection({ onWhatsAppBooking }: AboutSectionProps) {
   const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-stone-50">
+    <section ref={sectionRef} id="about" className="py-20 bg-[#F7F7F7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div ref={contentRef}>
             <h2 
               ref={titleRef}
-              className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 tracking-tight leading-tight"
+              className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 tracking-tight leading-tight text-center lg:text-left"
               style={fadeInUp(titleVisible, 0)}
             >
               Miami's Premier Luxury Detail Specialists
@@ -29,10 +29,10 @@ export default function AboutSection({ onWhatsAppBooking }: AboutSectionProps) {
               style={slideInLeft(contentVisible, 200)}
             >
               <p>
-                At Vice City Mobile Wash & Detail, we understand that your luxury vehicle deserves nothing but the finest care. Our team of certified professionals specializes in exotic and performance vehicles, bringing years of expertise to every detail.
+                At Vice City Mobile Wash & Detail, we understand that your luxury vehicle <span className='font-bold'>deserves nothing but the finest care</span>. Our team of certified professionals specializes in exotic and performance vehicles, bringing years of expertise to every detail.
               </p>
               <p>
-                From our private studio for paint correction and ceramic coating to our mobile service that comes to you, we deliver exceptional results with unmatched convenience.
+                From our private studio for paint correction and ceramic coating to our mobile service that comes to you, <span className='font-bold'>deliver exceptional results</span> we with unmatched convenience.
               </p>
               <div className="grid grid-cols-2 gap-8 mt-8">
                 <div className="text-center" style={fadeInUp(contentVisible, 400)}>
@@ -46,7 +46,7 @@ export default function AboutSection({ onWhatsAppBooking }: AboutSectionProps) {
               </div>
             </div>
 
-            <div className="mt-8" style={fadeInUp(contentVisible, 600)}>
+            <div className="mt-8 flex justify-center" style={fadeInUp(contentVisible, 600)}>
               <button
                 onClick={onWhatsAppBooking}
                 className="bg-stone-900 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-stone-800 transition-colors transform hover:scale-105"
@@ -63,7 +63,7 @@ export default function AboutSection({ onWhatsAppBooking }: AboutSectionProps) {
                 alt="Vice City Mobile Wash Team"
                 width={395}
                 height={609}
-                className="max-w-sm h-auto rounded-2xl shadow-2xl object-cover object-center"
+                className="max-w-xs sm:max-w-sm h-auto rounded-2xl shadow-2xl object-cover object-center"
                 loading="lazy"
                 quality={90}
               />

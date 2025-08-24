@@ -8,7 +8,7 @@ export default function ReviewsSection() {
   const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={sectionRef} id="reviews" className="py-20 bg-white">
+    <section ref={sectionRef} id="reviews" className="py-20 bg-['#d6ccc2']">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className="text-center mb-16">
           <div 
@@ -32,13 +32,13 @@ export default function ReviewsSection() {
             className="text-xl text-stone-600 font-serif"
             style={fadeInUp(titleVisible, 400)}
           >
-            25+ Five-Star Google Reviews
+            25+ Five-Star <span className='text-yellow-400 font-bold bg-black px-2 border-none'>Google Reviews</span> 
           </p>
         </div>
 
         <div ref={reviewsRef} className="grid md:grid-cols-3 gap-8">
           <div 
-            className="bg-stone-50 p-8 rounded-2xl"
+            className="bg-stone-50 p-8 rounded-2xl border border-black"
             style={scaleIn(reviewsVisible, 0)}
           >
             <div className="flex text-yellow-400 mb-4">
@@ -47,13 +47,13 @@ export default function ReviewsSection() {
               ))}
             </div>
             <p className="text-stone-700 mb-6">
-              "Amazing service, attention to detail, and super convenient. Made the wrap on the car look like it was brand new. And the interior smells amazing. Will be coming back and recommending to friends💯"
+              "Amazing service, attention to detail, and super convenient. Made the wrap on the car look like it was brand new. And the interior smells amazing. Will be coming back and <span className='font-bold'>recommending to friends</span> 💯"
             </p>
             <p className="font-semibold text-stone-900">- Dylan Goularte</p>
           </div>
 
           <div 
-            className="bg-stone-50 p-8 rounded-2xl"
+            className="bg-stone-50 p-8 rounded-2xl border border-black"
             style={scaleIn(reviewsVisible, 200)}
           >
             <div className="flex text-yellow-400 mb-4">
@@ -62,22 +62,22 @@ export default function ReviewsSection() {
               ))}
             </div>
             <p className="text-stone-700 mb-6">
-              "1000/10 my car was like new. Fast service and attention to detail"
+              "1000/10 my car <span className='font-bold'>was like new</span>. Fast service and attention to detail"
             </p>
             <p className="font-semibold text-stone-900">- Maba Peña</p>
           </div>
 
           <div 
-            className="bg-stone-50 p-8 rounded-2xl"
+            className="bg-stone-50 p-8 rounded-2xl border border-black"
             style={scaleIn(reviewsVisible, 400)}
           >
-            <div className="flex text-yellow-400 mb-4">
+            <div className="flex text-yellow-400 mb-4 border-black">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-current" />
               ))}
             </div>
             <p className="text-stone-700 mb-6">
-              "Just got my car cleaned at VCDetail Carwash and wow-I'm seriously impressed! Huge shoutout to Jhonatham for the amazing job. Super friendly and detailed. My car's never looked better. Definitely coming back!"
+              "Just got my car cleaned at VCDetail Carwash and wow-I'm seriously impressed! Huge shoutout to Jhonatham for the amazing job. Super friendly and detailed. My car's <span className='font-bold'>never looked better</span>. Definitely coming back!"
             </p>
             <p className="font-semibold text-stone-900">- Dania Quesada</p>
           </div>

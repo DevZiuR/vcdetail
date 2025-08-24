@@ -12,7 +12,7 @@ export default function ServicesSection({ onWhatsAppBooking }: ServicesSectionPr
   const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={sectionRef} id="services" className="py-20 bg-white">
+    <section ref={sectionRef} id="services" className="py-20 bg-[#F7F7F7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className="text-center mb-16">
           <h2 

@@ -30,33 +30,32 @@ export default function Navigation({ onWhatsAppBooking, onScrollToSection }: Nav
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div className="fixed top-0 left-0 right-0 z-50 w-full max-w-full overflow-x-hidden">
       {/* Mobile Top Bar */}
-      <div className="md:hidden bg-white text-black text-sm py-2 w-full border-b border-stone-200">
+      <div className="bg-[#EEEEEE] text-black text-sm py-2 w-full border-b border-stone-200">
         <div className="w-full px-4 text-center font-medium">
-          Call us: <a href="tel:7868164231" className="text-black hover:underline">(786) 816-4231</a>
+          Call us: <a href="tel:7868164231" className="text-black hover:underline underline">(786) 816-4231</a>
         </div>
       </div>
 
       {/* Main Navigation */}
       <nav className="w-full bg-[#151515] backdrop-blur-sm border-b border-stone-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex items-center justify-between h-16 w-full">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 w-full">
+          <div className="flex items-center justify-between h-16 w-full relative">
+            {/* Logo */}
+            <div className="flex items-center flex-shrink-0">
               <Image
                 src="https://i.imgur.com/MPWMCui.png"
                 alt="Vice City Mobile Wash & Detail"
                 width={50}
                 height={50}
                 className="h-12 w-auto"
-                  priority
-                />
-              </div>
+                priority
+              />
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <div className="relative">
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -97,29 +96,30 @@ export default function Navigation({ onWhatsAppBooking, onScrollToSection }: Nav
               </button>
             </div>
 
-            <div className="md:hidden ml-auto">
+            {/* Hamburger Icon - Mobile */}
+            <div className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-stone-200 hover:text-white p-2 -mr-2"
+                className="text-stone-200 hover:text-white p-2 mr-0 focus:outline-none"
                 aria-label="Toggle menu"
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-7 h-7" />
               </button>
             </div>
           </div>
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-stone-900">
+            <div className="md:hidden w-full">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-stone-900 border-b border-stone-800 rounded-b-lg shadow-lg">
                 <div className="space-y-1">
-                  <button onClick={() => handleScrollToSection('services')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif" style={{ fontFamily: 'Crimson Text, serif' }}>Services</button>
+                  <button onClick={() => handleScrollToSection('services')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif w-full text-left" style={{ fontFamily: 'Crimson Text, serif' }}>Services</button>
                   <div className="pl-6 space-y-1">
                     {services.map((service, index) => (
                       <button
                         key={index}
                         onClick={() => handleScrollToSection('services')}
-                        className="block px-3 py-1 text-stone-300 hover:text-white text-sm font-serif"
+                        className="block px-3 py-1 text-stone-300 hover:text-white text-sm font-serif w-full text-left"
                         style={{ fontFamily: 'Crimson Text, serif' }}
                       >
                         • {service}
@@ -127,9 +127,9 @@ export default function Navigation({ onWhatsAppBooking, onScrollToSection }: Nav
                     ))}
                   </div>
                 </div>
-                <button onClick={() => handleScrollToSection('gallery')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif" style={{ fontFamily: 'Crimson Text, serif' }}>Gallery</button>
-                <button onClick={() => handleScrollToSection('reviews')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif" style={{ fontFamily: 'Crimson Text, serif' }}>Reviews</button>
-                <button onClick={() => handleScrollToSection('about')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif" style={{ fontFamily: 'Crimson Text, serif' }}>About</button>
+                <button onClick={() => handleScrollToSection('gallery')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif w-full text-left" style={{ fontFamily: 'Crimson Text, serif' }}>Gallery</button>
+                <button onClick={() => handleScrollToSection('reviews')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif w-full text-left" style={{ fontFamily: 'Crimson Text, serif' }}>Reviews</button>
+                <button onClick={() => handleScrollToSection('about')} className="block px-3 py-2 text-stone-200 hover:text-white font-serif w-full text-left" style={{ fontFamily: 'Crimson Text, serif' }}>About</button>
                 <button
                   onClick={onWhatsAppBooking}
                   className="block w-full mt-4 bg-stone-200 text-stone-900 px-6 py-2 rounded-full font-semibold text-center"
@@ -141,6 +141,18 @@ export default function Navigation({ onWhatsAppBooking, onScrollToSection }: Nav
           )}
         </div>
       </nav>
+      {/* Prevent horizontal scroll on mobile */}
+      <style jsx global>{`
+        html, body {
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+        @media (max-width: 768px) {
+          .max-w-7xl {
+            max-width: 100vw !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
